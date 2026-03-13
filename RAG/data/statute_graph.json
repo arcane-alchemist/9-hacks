@@ -1,0 +1,98 @@
+{
+  "statute_relationships": {
+    "dv_act_section_3": {
+      "title": "DV Act Section 3: Definition of Domestic Violence",
+      "related": ["dv_act_section_12", "ipc_section_498a", "ipc_section_376"],
+      "process_flow": ["dv_act_section_3", "dv_act_section_12"],
+      "remedy_type": "protection_order"
+    },
+    "dv_act_section_12": {
+      "title": "DV Act Section 12: Protection Order",
+      "related": ["dv_act_section_3", "ipc_section_498a", "nalsa_scheme"],
+      "process_flow": ["dv_act_section_3", "dv_act_section_12"],
+      "remedy_type": "protection_order",
+      "next_step": "file_at_magistrate"
+    },
+    "ipc_section_498a": {
+      "title": "IPC Section 498A: Cruelty by Husband or Relatives",
+      "related": ["dv_act_section_3", "dv_act_section_12", "ipc_section_376", "nalsa_scheme"],
+      "process_flow": ["ipc_section_498a"],
+      "remedy_type": "criminal_complaint",
+      "next_step": "file_fir"
+    },
+    "ipc_section_376": {
+      "title": "IPC Section 376: Punishment for Rape",
+      "related": ["ipc_section_498a", "nalsa_scheme"],
+      "process_flow": ["ipc_section_376"],
+      "remedy_type": "criminal_complaint",
+      "severity": "high",
+      "next_step": "file_fir_urgent"
+    },
+    "payment_of_wages_section_5": {
+      "title": "Payment of Wages Act Section 5: Payment of Wages",
+      "related": ["payment_of_wages_section_15", "minimum_wages_section_3", "nalsa_scheme"],
+      "process_flow": ["payment_of_wages_section_5", "payment_of_wages_section_15"],
+      "remedy_type": "labour_complaint",
+      "next_step": "file_with_labour_commissioner"
+    },
+    "payment_of_wages_section_15": {
+      "title": "Payment of Wages Act Section 15: Penalties for Non-Payment",
+      "related": ["payment_of_wages_section_5", "minimum_wages_section_3", "nalsa_scheme"],
+      "process_flow": ["payment_of_wages_section_5", "payment_of_wages_section_15"],
+      "remedy_type": "labour_complaint",
+      "next_step": "file_with_labour_commissioner"
+    },
+    "minimum_wages_section_3": {
+      "title": "Minimum Wages Act Section 3: Fixing of Minimum Wages",
+      "related": ["payment_of_wages_section_5", "payment_of_wages_section_15", "nalsa_scheme"],
+      "process_flow": ["minimum_wages_section_3"],
+      "remedy_type": "labour_complaint"
+    },
+    "rti_act_section_6": {
+      "title": "Right to Information Act Section 6: Procedure for Seeking Information",
+      "related": ["nalsa_scheme"],
+      "process_flow": ["rti_act_section_6"],
+      "remedy_type": "information_request",
+      "next_step": "file_rti_application"
+    },
+    "atrocities_act_section_3": {
+      "title": "SC/ST Prevention of Atrocities Act Section 3: Punishment for Atrocities",
+      "related": ["nalsa_scheme"],
+      "process_flow": ["atrocities_act_section_3"],
+      "remedy_type": "criminal_complaint",
+      "severity": "high",
+      "next_step": "file_fir_urgent"
+    },
+    "nalsa_scheme": {
+      "title": "NALSA Free Legal Aid Scheme",
+      "related": ["dv_act_section_3", "dv_act_section_12", "ipc_section_498a", "ipc_section_376", "payment_of_wages_section_5", "payment_of_wages_section_15", "minimum_wages_section_3", "rti_act_section_6", "atrocities_act_section_3"],
+      "remedy_type": "legal_aid",
+      "applies_to": "all_domains"
+    }
+  },
+  "domain_statute_map": {
+    "labour": ["payment_of_wages_section_5", "payment_of_wages_section_15", "minimum_wages_section_3"],
+    "family_dv": ["dv_act_section_3", "dv_act_section_12", "ipc_section_498a", "ipc_section_376"],
+    "criminal": ["ipc_section_498a", "ipc_section_376"],
+    "rti": ["rti_act_section_6"],
+    "scst": ["atrocities_act_section_3"],
+    "legal_aid": ["nalsa_scheme"]
+  },
+  "process_flows": {
+    "domestic_violence_protection": {
+      "steps": ["dv_act_section_3", "dv_act_section_12"],
+      "description": "File protection order at Magistrate",
+      "timeline": "30-60 days"
+    },
+    "labour_wage_recovery": {
+      "steps": ["payment_of_wages_section_5", "payment_of_wages_section_15"],
+      "description": "File complaint with Labour Commissioner",
+      "timeline": "60-90 days"
+    },
+    "criminal_assault": {
+      "steps": ["ipc_section_498a", "ipc_section_376"],
+      "description": "File FIR at police station",
+      "timeline": "Ongoing"
+    }
+  }
+}

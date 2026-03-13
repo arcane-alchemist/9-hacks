@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+chromadb
+langdetect
+deep-translator
+google-generativeai
+python-dotenv
+requests
+openai
+
+python-multipart==0.0.22
