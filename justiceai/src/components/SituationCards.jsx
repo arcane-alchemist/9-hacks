@@ -85,7 +85,7 @@ export default function SituationCards({ onSelectSituation }) {
           const rights = t(`situations.${key}.rights`);
 
           return (
-            <div key={key} className={`rounded-2xl border-2 overflow-hidden transition-all duration-300 card-hover ${c.bg} ${isOpen ? c.border + ' shadow-lg' : 'border-transparent shadow-sm hover:' + c.border.split(' ')[0].replace('border-', 'border-')}`}>
+            <div key={key} className={`rounded-2xl border-2 overflow-hidden transition-all duration-300 card-hover bg-transparent ${isOpen ? c.border + ' shadow-lg' : 'border-transparent shadow-sm hover:' + c.border.split(' ')[0].replace('border-', 'border-')}`}>
               <button
                 onClick={() => handleClick(key)}
                 className="w-full text-left p-4"
