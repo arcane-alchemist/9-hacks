@@ -12,11 +12,11 @@ export default function FeedbackBar({ onLiked }) {
 
   if (feedback) {
     return (
-      <div className="flex items-center gap-2 pt-2">
-        <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${
+      <div className="flex items-center gap-2 pt-1 msg-enter">
+        <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full ${
           feedback === 'up'
-            ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800'
-            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-600'
+            ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800/60'
+            : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600'
         }`}>
           {feedback === 'up' ? (
             <>
@@ -39,12 +39,12 @@ export default function FeedbackBar({ onLiked }) {
   }
 
   return (
-    <div className="flex items-center gap-3 pt-3 border-t border-gray-100 dark:border-gray-700 mt-3">
-      <span className="text-xs text-gray-400 dark:text-gray-500">{t('feedback.question')}</span>
-      <div className="flex gap-1.5">
+    <div className="flex items-center gap-3 pt-3 border-t border-slate-100 dark:border-slate-700/50 mt-1">
+      <span className="text-xs text-slate-400 dark:text-slate-500">{t('feedback.question')}</span>
+      <div className="flex gap-1">
         <button
           onClick={() => handleFeedback('up')}
-          className="p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30 transition-colors"
+          className="p-1.5 rounded-lg text-slate-300 dark:text-slate-600 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30 transition-all duration-150 active:scale-90"
           aria-label="Helpful"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -53,7 +53,7 @@ export default function FeedbackBar({ onLiked }) {
         </button>
         <button
           onClick={() => handleFeedback('down')}
-          className="p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 transition-colors"
+          className="p-1.5 rounded-lg text-slate-300 dark:text-slate-600 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 transition-all duration-150 active:scale-90"
           aria-label="Not helpful"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
