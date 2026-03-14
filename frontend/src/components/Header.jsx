@@ -5,7 +5,7 @@ export default function Header({ dark, onToggleDark }) {
   const { t } = useT();
 
   return (
-    <header className="bg-black/30 backdrop-blur-md border-b border-white/10 sticky top-0 z-40">
+    <header className="bg-black/30  border-b border-white/10 sticky top-0 z-40">
       <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -16,7 +16,7 @@ export default function Header({ dark, onToggleDark }) {
           </div>
           <div>
             <h1 className="text-xl font-light text-white tracking-tight leading-none">
-              <span className="text-teal-400">Justice</span>AI
+              <span className="text-teal-400">Legal</span>Saathi
             </h1>
             <p className="text-xs text-gray-400 mt-0.5 leading-none font-light">{t('header.tagline')}</p>
           </div>

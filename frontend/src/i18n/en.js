@@ -7,6 +7,22 @@ export default {
     subheading: 'Tap a card to see your rights instantly — no internet needed',
   },
   chat: {
+    greeting: 'How can I help you today?',
+    prompts: {
+      p1: 'My employer hasn\'t paid my wages',
+      p2: 'I need protection from domestic abuse',
+      p3: 'My land is being taken illegally',
+      p4: 'I faced caste discrimination',
+      p5: 'My employer is forcing overtime without pay',
+      p6: 'I want to file an RTI application'
+    },
+    cats: {
+      Labour: 'Labour',
+      Safety: 'Safety',
+      Property: 'Property',
+      'SC/ST Rights': 'SC/ST Rights',
+      RTI: 'RTI'
+    },
     placeholder: 'Type your legal problem here...',
     pincodePlaceholder: 'Enter 6-digit pincode for nearest legal aid office',
     send: 'Send',
@@ -50,7 +66,7 @@ export default {
     dislikedMsg: 'Thanks for your feedback. Try rephrasing for better results.',
   },
   footer: {
-    disclaimer: 'JusticeAI is an informational tool, not a substitute for professional legal advice.',
+    disclaimer: 'LegalSaathi is an informational tool, not a substitute for professional legal advice.',
   },
   situations: {
     labour: {

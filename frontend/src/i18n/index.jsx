@@ -16,14 +16,14 @@ function getNestedValue(obj, path) {
 export function I18nProvider({ children }) {
   const [lang, setLang] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('justiceai-lang') || 'en';
+      return localStorage.getItem('legalsaathi-lang') || 'en';
     }
     return 'en';
   });
 
   const changeLang = useCallback((code) => {
     setLang(code);
-    localStorage.setItem('justiceai-lang', code);
+    localStorage.setItem('legalsaathi-lang', code);
   }, []);
 
   const t = useCallback((key) => {

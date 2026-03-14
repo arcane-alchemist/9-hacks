@@ -26,7 +26,7 @@ export async function generateLetter({ type, user_name, district, date, details 
   return data;
 }
 
-export async function getDLSA(pincode) {
-  const { data } = await api.get(`/dlsa/${pincode}`);
+export async function getDLSA(pincode, domain = 'general') {
+  const { data } = await api.post('/locate-office', { pincode, domain });
   return data;
 }

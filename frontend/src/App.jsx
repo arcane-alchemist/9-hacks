@@ -11,7 +11,7 @@ export default function App() {
   const [letterModal, setLetterModal] = useState(null);
   const [dark, setDark] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('justiceai-dark');
+      const saved = localStorage.getItem('legalsaathi-dark');
       if (saved !== null) return saved === 'true';
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
@@ -20,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark);
-    localStorage.setItem('justiceai-dark', String(dark));
+    localStorage.setItem('legalsaathi-dark', String(dark));
   }, [dark]);
 
   return (
