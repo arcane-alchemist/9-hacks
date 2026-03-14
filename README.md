@@ -5,7 +5,7 @@
 ![React](https://img.shields.io/badge/React-19-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
 
-LegalSaathi is an intelligent, multi-lingual legal assistance platform designed to empower individuals with accessible legal knowledge. By leveraging a Retrieval-Augmented Generation (RAG) architecture running on top of real legal statutes, it provides actionable steps, extracts critical deadlines, and delivers clear responses to complex legal scenarios.
+LegalSaathi is an intelligent, multi-lingual legal assistance platform designed to empower individuals with accessible legal knowledge. By leveraging a Retrieval-Augmented Generation (RAG) architecture running on top of real legal statutes,it provides actionable steps, extracts critical deadlines, and delivers clear responses to complex legal scenarios.
 
 ## 🌟 Key Features
 
