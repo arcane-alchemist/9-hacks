@@ -13,5 +13,6 @@ if (Test-Path "$PSScriptRoot\backend\.venv") {
     
     Write-Host "Virtual environment activated successfully!" -ForegroundColor Green
 } else {
+
     Write-Error "Virtual environment not found at $PSScriptRoot\backend\.venv. Have you run 'python -m venv .venv'?"
 }
