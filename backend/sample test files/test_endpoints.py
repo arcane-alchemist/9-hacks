@@ -1,4 +1,4 @@
-"""Simple test script for JusticeAI endpoints."""
+"""Simple test script for LegalSaathi endpoints."""
 
 import requests
 import json
@@ -204,7 +204,7 @@ def test_invalid_request():
 
 def main():
     """Run all tests."""
-    print("\n🧪 JusticeAI Backend - Test Suite\n")
+    print("\n🧪 LegalSaathi Backend - Test Suite\n")
     
     try:
         test_health()

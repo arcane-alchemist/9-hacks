@@ -38,7 +38,7 @@ async def process_and_reply(phone_number: str, message_text: str):
     """Acts as a bridge. Forwards the SMS to our existing AI logic, gets the answer, sends it back."""
     print(f"?? Processing incoming SMS from {phone_number}...\n-> Content: {message_text}", flush=True)
     
-    # 1. Forward the query to our own local JusticeAI core endpoint to prevent duplicated code!
+    # 1. Forward the query to our own local LegalSaathi core endpoint to prevent duplicated code!
     async with httpx.AsyncClient(timeout=45.0) as client:
         try:
             response = await client.post(

@@ -163,7 +163,7 @@ def check_env():
 def main():
     """Run all checks."""
     print("=" * 60)
-    print("🚀 JusticeAI Graph RAG - Verification Checklist")
+    print("🚀 LegalSaathi Graph RAG - Verification Checklist")
     print("=" * 60)
     
     checks = [

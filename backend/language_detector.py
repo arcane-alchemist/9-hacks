@@ -23,14 +23,11 @@ def detect_language(text: str) -> str:
         if detected_lang not in SUPPORTED_LANGUAGES:
             # Default to English if detected language not in our supported list
             return "en"
-        
+
         return detected_lang
     except LangDetectException as e:
-        raise ValueError(f"Language detection failed: {str(e)}")
-
-
-def is_english(text: str) -> bool:
-    """Check if text is already in English."""
+        # If the user enters numbers or symbols with no letter features, default to English instead of crashing
+        return "en"
     try:
         return detect(text) == "en"
     except LangDetectException:

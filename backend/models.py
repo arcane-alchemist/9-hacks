@@ -50,6 +50,7 @@ class QueryResponse(BaseModel):
     clarification_needed: bool = Field(..., description="True if more info is needed")
     clarification_question: Optional[str] = Field(None, description="Question in user's language if clarification needed")
     disclaimer: str = Field(..., description="Legal disclaimer (in user's language)")
+    deadline: Optional[str] = Field(None, description="Extracted deadline if any")
 
 
 class LetterResponse(BaseModel):

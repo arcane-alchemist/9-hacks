@@ -1,4 +1,4 @@
-"""Main FastAPI application for JusticeAI."""
+"""Main FastAPI application for LegalSaathi."""
 
 import os
 from contextlib import asynccontextmanager
@@ -34,14 +34,14 @@ rag_system = RAGSystem()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("🚀 Starting JusticeAI backend...")
+    print("🚀 Starting LegalSaathi backend...")
     rag_system.load_statutes()
     print("✓ RAG system initialized")
     yield
-    print("🛑 Shutting down JusticeAI backend...")
+    print("🛑 Shutting down LegalSaathi backend...")
 
 app = FastAPI(
-    title="JusticeAI Backend",
+    title="LegalSaathi Backend",
     description="AI-powered legal companion for underserved Indians",
     version="1.0.0",
     lifespan=lifespan
@@ -56,15 +56,15 @@ app.add_middleware(
 )
 
 from textbee_bot import textbee_router
+from deadline import deadline_router, extract_deadline
 app.include_router(textbee_router)
-
-app.include_router(textbee_router)
+app.include_router(deadline_router)
 
 @app.get("/")
 def root():
     return {
         "status": "running",
-        "service": "JusticeAI Backend",
+        "service": "LegalSaathi Backend",
         "version": "1.0.0"
     }
 
@@ -82,6 +82,15 @@ def query_legal_issue(request: QueryRequest):
         if request.pincode:
             dlsa_office = get_dlsa_by_pincode(request.pincode)
         llm_response["dlsa_office"] = dlsa_office
+        
+        # Detect deadline
+        full_text_for_deadline = llm_response.get("rights_summary", "") + " " + " ".join(llm_response.get("action_steps", [])) + " " + " ".join(llm_response.get("cited_sections", []))
+        deadline_result = extract_deadline(full_text_for_deadline)
+        if deadline_result.get("deadline_detected"):
+            llm_response["deadline"] = deadline_result.get("deadline_text")
+        else:
+            llm_response["deadline"] = None
+        
         return QueryResponse(**llm_response)
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
